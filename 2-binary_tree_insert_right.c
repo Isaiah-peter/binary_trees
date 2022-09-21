@@ -25,24 +25,22 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		return (NULL);
 	}
 
-	if (parent->n < value)
+	if (result == NULL)
 	{
-		if (parent->right != NULL && parent->right->n > value)
-		{
-			current = parent->right;
-			parent->right = result;
-			binary_tree_insert_right(result, current->n);
-		}
-		else if(parent->right != NULL && parent->right->n < value)
-        {
-            current = result;
-            binary_tree_insert_right(parent->right, current->n);
-        }
-        else
-        {
-            parent->right = result;
-        }
+		return (NULL);
 	}
+
+	if (parent->right != NULL)
+	{
+		current = parent->right;
+		parent->right = result;
+		binary_tree_insert_right(result, current->n);
+	}
+	else
+	{
+		parent->right = result;
+	}
+
 
 	return (current);
 }
