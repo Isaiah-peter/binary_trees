@@ -108,6 +108,43 @@ void post_order_traversal(node_t* root)
     }
 }
 
+void delete(int data)
+{
+    node_t *current, *temp;
+    current = search(data);
+    if (current == NULL)
+        return;
+
+    if (current->leftChild != NULL || current->rightChild != NULL)
+    // current has at least one child
+        {
+            if (current->leftChild == NULL)
+            {
+                // current has only right child
+                temp = current;
+                current->data = current->rightChild->data;
+                current->rightChild->data = temp;
+            }
+            else if (current->rightChild == NULL)
+            {
+                // current has only left child
+                temp = current->data;
+                current->data = current->leftChild->data;
+                current->leftChild->data = temp;
+            }
+            else
+            {
+                // current node has two children
+            }
+        }
+    else
+    {
+        // current has no child
+        current = NULL;
+        free(current);
+    }
+}
+
 int main()
 {
     int i;
@@ -133,6 +170,8 @@ int main()
 
     printf("\nIn-order traversal: ");
     inorder_traversal(root);
+
+    delete(42);
 
     printf("\nPost-order traversal: ");
     post_order_traversal(root);
