@@ -3,8 +3,8 @@
 /**
  * binary_tree_preorder - tree traversal
  *
- * @param tree: tree
- * @param func: func
+ * @tree: tree
+ * @func: func
  * Return: nothing
  */
 

@@ -3,8 +3,8 @@
 /**
  * binary_tree_depth - get depth
  *
- * @param tree: tree
- * @return size_t: size
+ * @tree: tree
+ * Return: size
  */
 
 size_t binary_tree_depth(const binary_tree_t *tree)

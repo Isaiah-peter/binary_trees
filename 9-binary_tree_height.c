@@ -3,8 +3,8 @@
 /**
  * binary_tree_height - get height of tree
  *
- * @param tree: tree
- * @return size_t: size
+ * @tree: tree
+ * Return: size
  */
 
 

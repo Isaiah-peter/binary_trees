@@ -5,9 +5,9 @@
 /**
  * *binary_tree_insert_right - isert to right
  *
- * @param parent: root
- * @param value: value
- * @return binary_tree_t*: return binary_tree_t
+ * @parent: root
+ * @value: value
+ * Return: binary_tree_node
  */
 
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
@@ -22,7 +22,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 
 	if (parent == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	if (parent->n < value)
@@ -39,5 +39,5 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		}
 	}
 
-	return current;
+	return (current);
 }

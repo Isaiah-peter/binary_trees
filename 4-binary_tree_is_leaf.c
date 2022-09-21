@@ -3,8 +3,8 @@
 /**
  * binary_tree_is_leaf - get the leaf
  *
- * @param node: the node
- * @return int: 0 or 1
+ * @node: the node
+ * Return: 0 or 1
  */
 
 
