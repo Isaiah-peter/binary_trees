@@ -1,6 +1,7 @@
 #include "binary_trees.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 
 /**
  * binary_tree_insert_left - A function that inserts a node as the left-child
@@ -13,34 +14,20 @@
  */
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *result = malloc(sizeof(binary_tree_t));
-	binary_tree_t *current;
+	binary_tree_t *newNode, *temp;
 
 	if (parent == NULL)
-	{
 		return (NULL);
-	}
-
-	if (result == NULL)
-	{
+	newNode = binary_tree_node(parent, value);
+	if (newNode == NULL)
 		return (NULL);
-	}
 
-	result->n = value;
-	result->left = NULL;
-	result->right = NULL;
-	result->parent = parent;
-
+	newNode->left = parent->left;
 	if (parent->left != NULL)
 	{
-		current = parent->left;
-		parent->left = result;
-		binary_tree_insert_left(result, current->n);
+		temp = parent->left;
+		temp->parent = newNode;
 	}
-	else
-	{
-		parent->left = result;
-	}
-
-	return (result);
+	parent->left = newNode;
+	return (newNode);
 }
